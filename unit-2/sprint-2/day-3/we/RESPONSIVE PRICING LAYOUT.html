@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #heading{
+        text-align: center;
+        width: 40%;
+        margin: auto;
+    }
+    #heading> h1{
+        font-size: 40px;
+    }
+    #heading> p {
+         font-size: 20px;
+         line-height: 22px;
+         color: grey;
+    }
+    #card-section{
+        width: 70%;
+        height: 350px;
+        margin: auto;
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+    #card-section > div {
+        padding: 20px;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        border-radius: 20px;
+    }
+    h2 + h2 + p {
+        font-style: italic;
+        margin-top: -20px;
+    }
+    
+    #card-section > div:nth-child(1) > h1 {
+        color: rgb(34, 177, 21);
+    }
+    #card-section > div:nth-child(2) > h1 {
+        color: orange;
+    }
+    #card-section > div:nth-child(3) > h1 {
+        color: rgb(60, 57, 209);
+    }
+    button{
+        color: blue;
+        background-color: transparent;
+        font-size: 22px;
+        font-weight: bold;
+        border-radius: 15px;
+        padding: 10px 20px 10px 20px;
+        border: 1px solid navy;
+    }
+
+    @media all and (min-width: 480px) and (max-width: 720px){
+        #card-section{
+        width: 95%;
+        margin-top: 50px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+
+    }
+    #heading{
+        width: 100%;
+        font-size: 30px;
+    }
+    }
+    @media all and (min-width: 320px) and (max-width: 479px){
+        #card-section{
+        width: 95%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(3, auto);
+
+    }
+    #heading{
+        width: 100%;
+        font-size: 25px;
+    }
+
+    }
+
+    </style>
+
+</head>
+<body>
+    <div id="heading">
+        <h1>Choose a plan that right for your business</h1>
+        <p>We collect review from our users so you can get honest opinion of what an exprince with our website are realty like!</p>
+    </div>
+    <div id="card-section">
+        <div>
+            <h2>Starter Plan</h2>
+            <h1>Free</h1>
+            <p>Per Month</p>
+            <p>We collect reviews from our user so you can get an honest opinion of what an exprience with our website.</p>
+            <button>Start now</button>
+        </div>
+        <div>
+            <h2>Starter Plan</h2>
+            <h1>$39.00</h1>
+            <p>Per Month</p>
+            <p>We collect reviews from our user so you can get an honest opinion of what an exprience with our website</p>
+            <button>Start now</button>
+        </div>
+        <div>
+            <h2>Starter Plan</h2>
+            <h1>$59.00</h1>
+            <p>Per Month</p>
+            <p>We collect reviews from our user so you can get an honest opinion of what an exprience with our website.</p>
+            <button>Start now</button>
+        </div>
+    </div>
+    
+</body>
+</html>

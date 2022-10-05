@@ -1,0 +1,129 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phone App</title>
+    <style>
+        * {
+            background-color: black;
+
+        }
+
+        #phone {
+            width: 300px;
+            height: auto;
+            /* border: 1px solid red; */
+            margin: auto;
+            margin-top: 10px;
+            text-align: center;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 20px;
+        }
+
+        #password {
+            width: 97%;
+            font-size: 25px;
+            margin-top: 20px;
+        }
+
+        #submit {
+            width: 50%;
+            font-size: 20px;
+            margin-top: 20px;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+        }
+
+        input {
+            background-color: white;
+            color: black
+        }
+
+        h1 {
+            background-color: transparent;
+            color: white;
+        }
+
+        #pic {
+            width: 500px;
+            height: 500px;
+            /* border: 1px solid red; */
+
+            margin-left: 500px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            border-radius: 20px;
+            /* border: 1px solid white; */
+            margin-left: 20%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="phone">
+        <h1>Phone-Pay</h1>
+        <input type="password" id="pass" placeholder="Enter-OTP">
+        <button id="submit">Sumbit</button>
+
+    </div>
+    <div id="pic">
+        <img id="image" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Youtube_loading_symbol_1_(wobbly).gif"
+            alt="">
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    document.querySelector("#submit").addEventListener("click", phone)
+
+    function phone() {
+
+        let password = document.querySelector("#password").value
+
+        let promisess = new Promise(function (resolve, reject) {
+
+            setInterval(function () {
+
+                if (password === "0000") {
+                    resolve("Payment-Successful")
+                }
+                else {
+                    reject("Invalid-OTP")
+                }
+            }, 1000)
+
+        })
+
+
+        let image = document.querySelector("#image")
+
+
+
+
+        promisess.then(function (elem) {
+            console.log(elem)
+            image.src = "https://i.pinimg.com/originals/70/a5/52/70a552e8e955049c8587b2d7606cd6a6.gif"
+        })
+
+        promisess.catch(function (error) {
+            console.log(error)
+            image.src = "https://c.tenor.com/hwe3vkln0_UAAAAM/error-x-error.gifhttps://64.media.tumblr.com/782d917f83c0f62f29898e23e46da1a7/462bfea8ff07190a-27/s500x750/35f0b70f1cc30db5e6bcdfaef85752fad2cc5646.gifv"
+        })
+
+
+
+    }
+
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Button</title>
+    <style>
+        button{
+            margin-right: 20px;
+            font-weight: bold;
+            padding: 15px 32px;
+            border-radius: 10px;
+            border-color: white;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+</body>
+</html>
+
+<script>
+    let btnarr= [
+        {name:"Primary",color:"white",bgcolor:"blue"},
+       {name: "Secondary",color:"white",bgcolor:"grey"},
+        {name:"Success",color:"white",bgcolor: "green"},
+        {name:"Danger",color:"white",bgcolor:"red"},
+        {name:"Warning",color:"black",bgcolor:"yellow"},
+        {name:"Info",color:"black",bgcolor:"lightblue"},
+        {name:"Light",color:"black",bgcolor:"lightgray"},
+        {name:"Dark",color:"white",bgcolor:"darkslategray"},
+        {name:"Link",color:"blue",bgcolor:"white"}
+    ];
+
+	for(i=0; i<btnarr.length; i++){
+        let btn = document.createElement("button");
+        btn.innerText=btnarr[i].name;
+        btn.style.backgroundColor=btnarr[i].bgcolor;
+        btn.style.color=btnarr[i].color;
+        document.querySelector("body").append(btn);
+    }	
+        
+</script>

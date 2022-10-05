@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="enter 1st Number" id="first" placeholder="enter 1st Number">
+	<input type="number" name="enter 2nd Number" id="second" placeholder="enter 2nd Number" >
+	<hr>
+	<button onclick="Addition()">Add</button>
+	<button onclick="Subtraction()">Subtract</button>
+    <button onclick="Division()">Divide</button>
+    <button onclick="Multiplication()">Multiply</button>
+</body>
+</html>
+<script>
+    function Addition() {
+        // Show the alert of the filled name
+        let x=document.getElementById("first").value;
+       let y=document.getElementById("second").value;
+       x=Number(x);
+       y=Number(y);
+       alert(x+y);
+       console.log(x+y);
+    }
+    function Subtraction() {
+        // Show the alert of the filled name
+        let x=document.getElementById("first").value;
+       let y=document.getElementById("second").value;
+       x=Number(x);
+       y=Number(y);
+       alert(x-y);
+       
+    }
+    function Division() {
+        // Show the alert of the filled name
+        let x=document.getElementById("first").value;
+       let y=document.getElementById("second").value;
+       x=Number(x);
+       y=Number(y);
+       alert(x/y);
+    }
+    function Multiplication() {
+        // Show the alert of the filled name
+        let x=document.getElementById("first").value;
+       let y=document.getElementById("second").value;
+       x=Number(x);
+       y=Number(y);
+       alert(x*y);
+    }
+
+    </script>

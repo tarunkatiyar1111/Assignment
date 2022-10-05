@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Students</title>
+  <style>
+    .navbar{
+    
+    display: flex;
+    justify-content: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    gap: 150px;
+    
+
+    
+}
+a{
+    margin: 20px;
+}
+h1{
+    text-align: center;
+    color: black;
+}
+#form{
+    width: 20%;
+    border: 1px solid transparent;
+    margin: auto;
+
+    margin-top: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   
+}
+#gender{
+    width: 90%;
+    font-size: 10px;
+    margin-top: 10px;
+    
+}
+#course{
+    width:90%;
+    font-size: 20px;
+    margin-top: 10px;
+    
+}
+input{
+    width:90%;
+    font-size: 16px;
+    margin-top:10px ;
+    
+}
+  </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="./index.html"><h1>Add Students</h1></a>
+      <a href="./students.html"><h1>Students Database</h1></a>
+      <a href="./admitted.html"><h1>Admitted</h1></a>
+      <a href="./rejected.html"><h1>Rejected</h1></a>
+    </div>
+    <select id="filter">
+      <option value="">Filter By Course</option>
+      <option value="all">All</option>
+      <option value="Web-Development">Web-Development</option>
+      <option value="Android-Development">Android-Development</option>
+      <option value="Data-Analitics">Data-Analitics</option>
+    </select>
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Course</th>
+          <th>Gender</th>
+          <th>Phone</th>
+          <th>Admitted</th>
+          <th>Rejected</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table Rows should be appended Here  -->
+      </tbody>
+    </table>
+  </body>
+  <script src="./students.js"></script>
+</html>

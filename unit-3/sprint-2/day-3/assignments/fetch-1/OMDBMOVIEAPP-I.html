@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://willowy-custard-1f7636.netlify.app/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movies</title>
+    <style>
+      * {
+        background-color: rgb(255, 249, 249);
+      }
+      #main {
+        width: 97%;
+        height: 50px;
+
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        background-image: url(https://i.makeagif.com/media/6-03-2018/DaOBAl.gif);
+      }
+      #search {
+        height: 100%;
+        width: 160px;
+        font-size: 25px;
+        margin-left: 10px;
+        border-radius: 40px;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+        border: 1px solid black;
+        cursor: pointer;
+      }
+      #search:hover {
+        background-color: rgb(105, 0, 0);
+        color: white;
+        font-size: 40px;
+      }
+      input {
+        width: 450px;
+        background-color: transparent;
+        font-size: 25px;
+        font-weight: bold;
+        border: 5px solid;
+        color: white;
+        margin-left: 120px;
+        border-radius: 5px;
+      }
+      #movie {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 50px;
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+      }
+      #movie > div {
+        /* border: 1px solid red; */
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        border-radius: 20px;
+      }
+      img {
+        width: 100%;
+
+        border-radius: 20px;
+      }
+      h1,
+      h2 {
+        background-color: white;
+      }
+      #await {
+        width: 60%;
+
+        margin: auto;
+      }
+      #high {
+        color: white;
+        background-color: transparent;
+        font-size: 20px;
+      }
+      #low {
+        color: white;
+        background-color: transparent;
+        font-size: 20px;
+        margin-left: 50px;
+      }
+      #select {
+        color: white;
+        background-color: transparent;
+        font-size: 20px;
+        margin-left: 50px;
+
+        border: 1px solid transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <button id="high">Rating High-To-Low</button>
+      <button id="low">Rating Low-To-High</button>
+      <input type="search" id="type" placeholder="Search.....">
+      <button id="search">Search</button>
+      <select name="" id="select" onchange="filltheyear()">
+        <option value="Year">YEAR</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+      </select>
+    </div>
+    <div id="movie"></div>
+
+    <div id="await"></div>
+  
+
+<script>
+  document.querySelector("#search").addEventListener("click", movie);
+  let total;
+
+  function movie() {
+    let query = document.querySelector("#type").value;
+
+    let url = `https://www.omdbapi.com/?s=${query}&apikey=b8afc408`;
+
+    async function savemovie() {
+      try {
+        let res = await fetch(url);
+        let data = await res.json();
+        console.log(data);
+        total = data.Search;
+        localStorage.setItem("allpictures", JSON.stringify(total));
+        showmovie(data.Search);
+      } catch (err) {
+        console.log(err);
+        let pic = document.createElement("img");
+        pic.src = "https://c.tenor.com/hwe3vkln0_UAAAAM/error-x-error.gif";
+
+        document.querySelector("#await").append(pic);
+      }
+    }
+    savemovie();
+
+    function showmovie(data) {
+      document.querySelector("#movie").innerHTML = null;
+      document.querySelector("#await").innerHTML = null;
+      data.forEach(function (elem) {
+        let div = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = elem.Poster;
+
+        let name = document.createElement("h1");
+        name.innerText = elem.Title;
+
+        let year = document.createElement("h1");
+        year.innerText = "Release" + "-" + elem.Year;
+
+        let rat = document.createElement("h2");
+        rat.innerText = "IMDB-Rating" + "-" + elem.imdbID;
+
+        div.append(img, name, year, rat);
+        document.querySelector("#movie").append(div);
+      });
+    }
+    document.querySelector("#high").addEventListener("click", highlow);
+
+    function highlow() {
+      total = total.sort(function (a, b) {
+        if (a.imdbID < b.imdbID) return 1;
+        if (a.imdbID > b.imdbID) return -1;
+        else return 0;
+      });
+      showmovie(total);
+    }
+
+    document.querySelector("#low").addEventListener("click", lowhigh);
+    function lowhigh() {
+      total = total.sort(function (a, b) {
+        if (a.imdbID > b.imdbID) return 1;
+        if (a.imdbID < b.imdbID) return -1;
+        else return 0;
+      });
+      showmovie(total);
+    }
+  }
+  function filltheyear() {
+    let total = JSON.parse(localStorage.getItem("allpictures"));
+    let year = document.querySelector("#select").value;
+    total = total.filter(function (el) {
+      if (el.Year === year) {
+        return el;
+      }
+    });
+    showmovie(total);
+    function showmovie(data) {
+      document.querySelector("#movie").innerHTML = null;
+      document.querySelector("#await").innerHTML = null;
+      if (data.length === 0) {
+      let pic2= document.createElement("img")
+      pic2.src = "https://c.tenor.com/hwe3vkln0_UAAAAM/error-x-error.gif"
+      document.querySelector("#await").append(pic2)
+      } else {
+        data.forEach(function (elem) {
+          let div = document.createElement("div");
+
+          let img = document.createElement("img");
+          img.src = elem.Poster;
+
+          let name = document.createElement("h1");
+          name.innerText = elem.Title;
+
+          let year = document.createElement("h1");
+          year.innerText = "Release" + "-" + elem.Year;
+
+          let rat = document.createElement("h2");
+          rat.innerText = "IMDB-Rating" + "-" + elem.imdbID;
+
+          div.append(img, name, year, rat);
+          document.querySelector("#movie").append(div);
+        });
+      }
+    }
+  }
+</script></body></html>

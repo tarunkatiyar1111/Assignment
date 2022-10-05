@@ -1,0 +1,25 @@
+/* Write necessery css for navbar here  */
+#navbar{
+    width: 100%;
+    position:-webkit-sticky;
+    position: sticky;
+    top:0;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+}
+#navbar>div:first-child{
+    width: 100%;
+}
+h1{
+text-align: center;
+margin:auto
+}
+form{
+    
+    width:20%;
+    display: grid;
+    margin:auto;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}

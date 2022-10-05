@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AMAR AKHBAR ANOTHY</h1>
+</body>
+</html>
+<script>
+
+
+    
+
+    let people1 ={
+        name:"Amar",
+        place:"goa",
+        profession:"singer",
+       
+
+        profchange:function(){
+
+        console.log('i am Amar and i am ' + this.profession);
+    }
+    }
+
+    let people2 ={
+    
+        name:"Akhbar",
+        place:"Delhi",
+        profession:"Cook",
+       
+        profchange :function(){
+        console.log('i am Akhbar and i am ' + this.profession);
+    }
+    }
+
+    let people3 ={
+    
+        name:"Anthony",
+        place:"Kashmir",
+        profession:"Magician",
+       
+    profchange :function(){
+        console.log('i am Antony and i am ' + this.profession);
+    }
+    }
+ people1.profchange.call(people1)
+
+</script>

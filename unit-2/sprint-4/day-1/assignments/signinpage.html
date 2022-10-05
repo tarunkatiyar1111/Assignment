@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNIN</title>
+    <style>
+        form{
+            width: 20%;
+            height: 200px;
+            /* border: 1px solid; */
+            margin: auto;
+            margin-top: 70px;
+            display: grid;
+            grid-template: repeat(6,100px);
+            gap: 5px;
+            background-color:white;
+            padding: 5%;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        border-radius: 10px;
+        }
+        label{
+            margin-top: 10px;
+            margin-right: 200px;
+        }
+        form:first-child{
+            color: black;
+            text-align: center;
+        }
+        input{
+            width: 100%;
+            height: 80%;
+            border-radius: 5px;
+            border-color: gray;
+        }
+        button{
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            border: 0px;
+            color: white;
+            cursor: pointer;
+            gap: 5px;
+            margin-top: 5px;
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: palevioletred;
+        }  
+        p{
+            font-size: 15px;
+            color: gray;
+        }
+    
+    </style>
+</head>
+<body>
+    <div>
+        <form>
+       <label>Email</label>
+       <input type="text" id="email" placeholder="     Email">
+       <label>Password</label>
+        <input type="text" id="password" placeholder="    password">
+        <button id="submit">Sign In</button>
+        </form>
+    </div>
+</body>
+<script>
+    let form = document.querySelector("form");
+    let userData=JSON.parse(localStorage.getItem("userData")) || []; 
+    form.addEventListener("submit", function(event){
+ event.preventDefault();
+        let data={
+            email:form.email.value,
+            password:form.password.value
+        }
+        if(checkSignIn(data.email,data.password)===true){
+            localStorage.setItem("userData", JSON.stringify(userData));
+alert("sign in succesfull")
+window.location.href="file:///C:/Users/ashutosh/Desktop/signupp/signin/index.html";
+        }else{
+            alert("wrong user name and password");
+        }
+    }) 
+function checkSignIn(email,password){
+    let filtered = userData.filter(function(element){
+        return element.email === email && element.password === password;
+    })
+    if(filtered.length > 0){
+        return false;
+    }else{
+        return true;
+    }
+}
+    </script>  
+</html>

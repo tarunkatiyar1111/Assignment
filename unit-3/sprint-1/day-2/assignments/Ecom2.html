@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        #form{
+            width: 300px;
+            display: grid;
+            margin: auto;
+        }
+        #form>label{
+            margin: 5px 0px;
+            text-align: left;
+        }
+        #add{
+            padding: 5px;
+            margin: 10px 0;
+        }
+        button{
+            width: 300px;
+            padding: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            margin: 50px 0;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <a href="products.html"><button>GO TO PRODUCTS</button></a>
+    <form id="form">
+
+        <label >Product name</label>
+        <input type="text" id="name">
+        <label >Category</label>
+        <input type="text" id="category">
+        <label >Image Url</label>
+        <input type="text" id="image">
+        <label >Price</label>
+        <input type="number" id="price">
+        <label>Gender</label>
+        <select id="gender">
+            <option>--</option>
+            <option>male</option>
+            <option>Female</option>
+            <option>Others</option>
+        </select>
+        <label>Sold</label>
+       <input type="text" id="sold" value=false >
+       <input type="submit" id="add">
+    </form>
+</body>
+</html>
+<script>
+    document.querySelector("#form").addEventListener("submit",dashboard)
+    let dataarr = JSON.parse(localStorage.getItem("Products")) || []
+    function dashboard(event){
+        event.preventDefault();
+        let name = form.name.value
+        let category = form.category.value
+        let image = form.image.value
+        let price = form.price.value
+        let gender = form.gender.value
+        let sold = form.sold.value
+        function objdetails(n,c,img,i,g,s){
+            this.name = n;
+            this.category = c;
+            this.image = img;
+            this.price = i;
+            this.gender = g;
+            this.sold = s
+        }
+
+        let dataobj = new objdetails(name,category,image,price,gender,sold)
+        dataarr.push(dataobj)
+        localStorage.setItem("Products",JSON.stringify(dataarr))
+
+    }
+
+
+
+</script>

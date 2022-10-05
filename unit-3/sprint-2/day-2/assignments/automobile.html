@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>automobile</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let FourWHeelers={
+        brand:'tata',
+        tyres :'four',
+        airbags:'three',
+        windShield:'one',
+        airconditioner:'front',
+    
+    }
+     let hyunda= Object.create(FourWHeelers);
+    
+     hyunda.seating='six';
+     console.log('hyunda:',hyunda)
+    
+     let tata =Object.create(FourWHeelers);
+     tata.capacity='four';
+     console.log('tata:',tata)
+    
+    
+    function mahindra(c,f,fo,FOR,fr){
+        this.categ=c;
+        this.winDshield=f;
+        this.airBAGS=fo;
+        this.tYres=FOR;
+        this.aIRconditioner=fr;
+    }
+    
+    let FOurWheelers=new mahindra ('Car','front','four','four','front')
+        console.log(FOurWheelers);
+    </script>

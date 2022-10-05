@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart page</title>
+    <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    #products{
+      display: grid;
+      grid-template-columns:repeat(3,1fr);
+      grid-template-rows: auto;
+      gap: 10px 20px;
+    }
+    #products>div>img{
+      width: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div id="products">
+        <!--will be products data appendent here-->
+    </div>
+</body>
+<script>
+let productsCont=document.getElementById("products");
+let cartLS=JSON.parse(localStorage.getItem("cart-page")) || [];
+let totalPrice=0; 
+function displayProducts(productData){ 
+productsCont.innerHTML="";
+productData.forEach(function(element){
+  totalPrice+= +element.price;
+let product = document.createElement("div");
+let img=document.createElement("img");
+img.src=element.img;
+
+let name = document.createElement("h1");
+name.innerText=element.name;
+
+let catagory=document.createElement("p");
+catagory.innerText=element.catagory;
+
+let DeleteCart=document.createElement("button");
+DeleteCart.innerText="Delete";
+DeleteCart.addEventListener("click",function(){
+Delete(element.productID);
+})
+product.append(img,name,catagory,DeleteCart);
+productsCont.append(product)
+ })
+console.log(totalPrice);
+}
+
+displayProducts(cartLS);
+
+function Delete(id){
+console.log(id)
+let Deleted = cartLS.filter(function(el){
+  return el.productID !=id;
+})
+cartLS=Deleted;
+localStorage.setItem("cart-page",JSON.stringify(cartLS));
+displayProducts(cartLS);
+}
+</script>  
+</html>

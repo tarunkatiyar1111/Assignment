@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai</title>
+    <style>
+    #masai {
+        width:100%;
+        /* border: 1px solid red; */
+        height: 60px;
+        display: flex;
+        justify-content: space-evenly;
+    } 
+    
+    #masai>div:first-child{
+        width: 10%;
+        height: 100%;
+        /* border: 1px solid teal; */
+    }
+   #masai>div:last-child{
+       width: 70%;
+       height:100%;
+       /* border: 1px solid teal; */
+       display: flex;
+       justify-content: space-around;
+   }
+   #masai>div{
+      display: flex;   
+      justify-content: center;
+       align-items: center;
+      
+   }
+   p+div{
+       display: flex;
+       background-color: #f2fdff; 
+       justify-content: center;
+       align-items: center;
+    }
+   p+div>img{
+       width: 20px;
+       height: 20px;
+       margin-left: 10px;
+   }
+    select{
+        border: 0;
+    }
+    </style>
+</head>
+
+ 
+<body>
+    <div id="masai">
+        <div>
+        <img src="https://www.masaischool.com/img/navbar/logo.svg">
+        </div>
+        <div>
+            <select>
+                <option value="">COURSES</option>
+            </select>
+            <p>FEES & ISA</p>
+            <p>ABOUT US</p>
+            <p>HIRE FROM US</p>
+            <p>FAQ</p>
+            <p>EVENTS</p>
+        <div>
+                <p>REFER & EARN</p>
+                <img src="https://www.masaischool.com/img/referral/hand.png">
+            </div>
+            <button>LOGIN</button>
+        </div>
+    </div>
+</body>
+</html>

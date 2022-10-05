@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container1{ 
+        width: 1260px;
+        height: 500px;
+         /* border: 1px solid black; */
+         margin-left: 30px;
+         font-size: 20px;
+        }
+        #container{
+     display: flex;
+     width: 1260px;
+       height: auto;
+      text-align: center;
+      /* border: 1px solid blue; */
+     }
+  #page1{
+        margin-top: auto;
+        }
+  #page2{
+        margin-top: auto;
+        }
+          
+  
+    #si{
+        width: 150px;
+        height:160px ;
+        border: 2px solid black;
+        margin-top: 20px;
+        background-color:#89a02c;
+    }
+    #hor{
+        /* grand horizontal */
+        width: 500px;
+        height:240px ;
+        /* border: 1px solid red; */
+        margin-top:112%;
+    }
+    #page5{
+        /* child horizontal */
+        display:flex;
+        width: 570px;
+        height:40px ;
+        /* border: 1px solid red; */
+        margin-top:19px;
+    }
+    #page6{
+        display: flex;
+        width: 870px;
+        height:440px;
+        /* border:1px solid purple; */
+        margin-left: 390px;
+    }
+    #page7{
+
+       width:40px;
+       height: 370px;
+      /* border:1px solid green; */
+      margin-top: 40px;
+      margin-left: 35px;
+      
+    }
+    
+    .card{
+        width: 40px;
+        height: 40px;
+        border: 2px solid black; 
+        margin:19px;
+        background-color:#89a02c;
+        font-size: 5px;
+        color: white;
+        margin-top: 0px;
+
+        }
+        
+        .card1{
+        width: 40px;
+        height: 40px;
+        border: 2px solid black; 
+        margin:19px;
+        margin-top: 10px;
+        background-color:#fe5555;
+        font-size: 20px;
+        }
+        .card2{
+        width: 40px;
+        height: 40px;
+        border: 3px solid black; 
+        margin:21px;
+        background-color: #ffe6d5;
+        }
+        .card3{
+            display: flex;
+        width: 40px;
+        height: 40px;
+        border: 2px solid black;
+        margin-right:30px;
+        background-color: blue;
+        margin-top: -156px;
+        }
+        .card4{
+         display: flex; 
+        width: 40px;
+        height: 40px;
+        border: 2px solid black; 
+        margin-top:20px;
+        background-color: #b34800;
+        } 
+        .card5{
+         display: flex; 
+        width: 40px;
+        height: 40px;
+        border: 2px solid black;
+        margin-top:20px; 
+        background-color: #59a02b;
+        } 
+        .card6{
+            display: flex; 
+        width: 40px;
+        height: 40px;
+        border: 2px solid black;
+        margin-top:20px;
+       background-color: #aa0087;
+        } 
+        .card7{
+         display: flex; 
+        width: 40px;
+        height: 40px;
+        border: 2px solid black;
+        margin-top:20px;
+        background-color: #6d535e;
+        } 
+        .card8{
+         display: flex; 
+        width: 40px;
+        height: 40px;
+        border: 2px solid black;
+        margin-top:20px;
+        background-color: #ff0066;
+        } 
+        .card9{
+         display: flex; 
+        width: 40px;
+        height: 40px;
+        border: 2px solid black;
+        margin-top:20px;
+       background-color: #ffcc00;
+        } 
+        .card:first-child{
+            background-color: #a90000;
+        }
+        .card4:nth-of-type(1),.card5:nth-of-type(2),.card5:nth-of-type(3),.card6:nth-of-type(3),.card6:nth-of-type(4),.card7:nth-of-type(4),.card7:nth-of-type(5){
+         background-color: #aa0087;
+        }
+      
+        .card5:nth-of-type(4), .card5:nth-of-type(5), .card6:nth-of-type(5){
+            background-color: #b34800;
+        }
+       .card6:nth-of-type(1),.card6:nth-of-type(2),.card7:nth-of-type(1),.card7:nth-of-type(2),.card7:nth-of-type(3){
+        background-color: #59a02b; 
+       }
+       .card4:nth-of-type(6),.card5:nth-of-type(6),.card6:nth-of-type(6),.card8:nth-of-type(6),.card9:nth-of-type(6),.card10:nth-of-type(6){
+       background-color: #6d535e;
+       }
+       #box{
+           width: 600px;
+           height: 100px;
+           
+           margin: auto;
+           margin-top: 30px;
+          
+       }
+       #box1{
+           display: flex;
+           width: 600px;
+           height: 50px;
+           border: 1px solid black;
+           background-color: #47582c;
+       }
+       #box2{
+        display: flex;
+           width: 600px;
+           height: 50px;
+           border: 1px solid black;
+           background-color: #95bc5f;
+       }
+       .box1{
+           width: 42px;
+           height: 50px;
+           border: 1px solid black;
+           color: white;
+           font-size: 20px;
+           text-align: center;
+      }
+      .box2{
+           width: 42px;
+           height: 50px;
+           border: 1px solid black;
+           color: black;
+           font-size: 20px;
+           text-align: center;
+    
+       }
+        
+
+</style>
+</head>
+<body>
+    <div id="container1">
+        <p style=" text-align: center;">THE PERIODIC TABLE OF ELEMENTS</p>
+   
+        <div id="container">
+         <div id="page">
+        <div class="card">
+            <h1>H</h1>
+        </div>       
+        <div class="card"></div>
+        <div class="card"></div>       
+        <div class="card"></div>       
+        <div class="card"></div>       
+        <div class="card"></div>       
+        <div class="card"></div>              
+    </div>
+    <div id="page1">
+        <div class="card1">4</div>
+        <div class="card1">12</div>       
+        <div class="card1">20</div>       
+        <div class="card1">38</div>       
+        <div class="card1">56</div>       
+        <div class="card1">88</div>              
+    </div>
+   
+    <div id="page2">
+        <div class="card2"></div>
+        <div class="card2"></div>       
+        </div>
+    <div id="si">
+        <p>14</p>
+        <h1>si</h1>
+        <p>silicon</p>
+        
+    <div id="hor">
+        <div id="page5">
+           <div class="card3"></div>
+           <div class="card3"></div>
+           <div class="card3"></div>
+           <div class="card3"></div>
+           <div class="card3"></div>
+           <div class="card3"></div>
+           <div class="card3"></div>
+           <div class="card3"></div>
+       </div>
+       <div id="page5">
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+       </div>
+       <div id="page5">
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+       </div>
+       <div id="page5">
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+        <div class="card3"></div>
+       </div>
+       </div> 
+       </div>
+    <div id="page6">
+    <div id="page7">
+        <div class="card4"></div>
+        <div class="card4"></div>
+        <div class="card4"></div>
+        <div class="card4"></div>
+        <div class="card4"></div>
+        <div class="card4"></div>
+    </div>
+    <div id="page7">
+        <div class="card5"></div>
+        <div class="card5"></div>
+        <div class="card5"></div>
+        <div class="card5"></div>
+        <div class="card5"></div>
+        <div class="card5"></div>
+    </div>
+    <div id="page7">
+        <div class="card6"></div>
+        <div class="card6"></div>
+        <div class="card6"></div>
+        <div class="card6"></div>
+        <div class="card6"></div>
+        <div class="card6"></div>
+    </div>
+    <div id="page7">
+        <div class="card7"></div>
+        <div class="card7"></div>
+        <div class="card7"></div>
+        <div class="card7"></div>
+        <div class="card7"></div>
+        <div class="card7"></div>
+    </div>
+    <div id="page7">
+        <div class="card8"></div>
+        <div class="card8"></div>
+        <div class="card8"></div>
+        <div class="card8"></div>
+        <div class="card8"></div>
+        <div class="card8"></div>
+    </div>
+    <div id="page7">
+        <div class="card9"></div>
+        <div class="card9"></div>
+        <div class="card9"></div>
+        <div class="card9"></div>
+        <div class="card9"></div>
+        <div class="card9"></div>
+       
+    </div>
+</div>
+</div>   
+<div id="box">
+    <div id="box1">
+        <div class="box1">
+        <p>La</p>
+        </div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+    </div>
+    <div id="box2">
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2">
+            <p>Am</p>
+        </div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2"></div>
+        <div class="box2">
+        <p>No</p>    
+        </div>
+    </div>
+</div> 
+</div>
+
+</div>
+</body>
+</html>

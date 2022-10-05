@@ -1,0 +1,15 @@
+#order-form{
+    width:300px;
+    height: auto;
+
+}
+input{
+    font-size: 30px;
+    width: 97%;
+    margin-top: 20px;
+}
+button{
+    width:50%;
+     font-size: 40px;
+     margin-top: 20px;
+}

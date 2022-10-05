@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #box1{
+        width: 100%;
+        height: 100px;
+        background-color: yellow;
+       }
+       #box2>div:nth-child(1){
+        grid-area: a;
+        background-color: red;
+        font-size: 30px;
+    }
+    #box2>div:nth-child(2){
+        grid-area: b;
+        background-color:#00ff2a;
+        font-size:30px;
+    }
+    #box2>div:nth-child(3){
+        grid-area: c;
+        background-color: #00ff2a;
+        font-size: 30px;
+    }
+    #box2>div:nth-child(4){
+        grid-area: d;
+        background-color: #00ff2a;
+        font-size: 30px;
+    }
+       #box2{
+        display: grid;
+        grid-template-columns: repeat(2,350px);
+        grid-template-rows: repeat(3,160px);
+        gap: 40px;
+        margin-top: 30px;
+        grid-template-areas: 
+         "a a a b"
+         "a a a c "
+         "a a a d"
+       }
+       @media all and (min-width:480px  ) and (max-width:720px){
+        #box2{
+            grid-template-columns: repeat(3,300px);
+            grid-template-rows: repeat(3,160px);
+            grid-template-areas: 
+         "a a a "
+         "a a a  "
+         "b c d"      
+        } 
+     
+    } 
+    @media all and (min-width:120px  ) and (max-width:479px){
+        #box2{
+            grid-template-columns: repeat(1,300px);
+            grid-template-rows: repeat(5,160px);
+            grid-template-areas: 
+         "a  "
+         "a"
+         "b  "
+         " c "
+         "d"      
+        } 
+     
+    }
+       
+    </style>
+</head>
+<body>
+    <div id="box1">Navigation</div>
+         <div id="box2">
+            <div>LEFT BOX</div>
+            <div>RIGHT BOX 1</div>
+            <div>RIGHT BOX 2</div>
+            <div>RIGHT BOX 3</div>
+        </div>
+</body>
+</html>

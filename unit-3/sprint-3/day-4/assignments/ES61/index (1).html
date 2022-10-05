@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar{
+            border: 1px solid;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+        }
+
+
+        .navbar>div{
+            width: 200px;
+            display: flex;
+            justify-content: space-around;
+            height: 70%;
+        }
+
+        .navbar>div>img{
+            width: 40px;
+        }
+
+        .navbar>div:first-child>img:last-child{
+            width: 100px;
+        }
+
+        .navbar>div:nth-child(2){
+            width: fit-content
+        }
+
+        input{
+            width: 500px;
+        }
+
+        #container{
+            margin: auto;
+            width: 90%;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+
+        }
+
+        #container>div{
+            width: 100%;
+        }
+
+        #container>div>img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/128/2989/2989870.png" alt="">
+            <img src="https://bseenlive.com/wp-content/uploads/2018/03/Youtube-Logo-Small.png" alt="">
+        </div>
+
+        <div>
+            <input type="text" id="query">
+            <button onclick="search()">Search</button>
+        </div>
+
+        <div>
+            <img src="https://cdn-icons-png.flaticon.com/128/3172/3172419.png" alt="">
+            <img src="https://cdn-icons-png.flaticon.com/128/3119/3119338.png" alt="">
+            <img src="https://cdn-icons-png.flaticon.com/128/3665/3665909.png" alt="">
+        </div>
+    </div>
+
+    <div id="container">
+
+    </div>
+</body>
+</html>
+
+
+<script src="index.js"></script>

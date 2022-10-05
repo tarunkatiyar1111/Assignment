@@ -1,0 +1,91 @@
+/* Write all the necessery css  */
+body{
+    background-color: white;
+    height: 1500px;
+}
+input,select{
+    display: block;
+    margin: 10px 0px;
+    font-size: 22px;
+    
+}
+option{
+    font-size: 30px;
+}
+
+   
+#create{
+    text-align: center;
+    width: 420px;
+    /* border: 1px solid red; */
+    margin: auto;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+ 
+}
+#name{
+    
+    margin: auto;
+    width: 85%;
+    margin-bottom: 10px;
+}
+#category{
+    margin: auto;
+    width: 120%;
+    margin-bottom: 10px;
+}
+#brand{
+    margin: auto;
+    width: 85%;
+    margin-bottom: 10px;
+}
+#price{
+    margin: auto;
+    width: 85%;
+    margin-bottom: 10px;
+}
+#deliveredBy{
+    width: 88%;
+    margin: auto;
+    margin-bottom: 10px;
+    
+
+}
+
+
+
+
+#category{
+    width: 85%;
+}
+
+
+#revision{
+display: inline-block;
+}
+input[type="ratio"]{
+    display: inline-block;
+}
+table,th{
+    
+    /* border: 1px solid red; */
+    margin: auto;
+    width: 1000px;
+    background-color:
+    #ffd54e;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    font-size: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+td{
+    background-color: white;
+}
+h1{
+    text-align: center;
+}
+
+
+    
+
+
+    

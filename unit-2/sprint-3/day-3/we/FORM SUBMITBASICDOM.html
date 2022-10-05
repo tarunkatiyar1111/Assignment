@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Values</title>
+</head>
+<body>
+    <form>
+	<input type="text" id="name"  placeholder="Enter name" value=""/>
+    <input type="number" id="age"  placeholder="Enter number" value=""/>
+	<select id="gender">
+		<option value="">Select Gender</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" id="email" placeholder="Enter email" value=""/>
+	<input type="number" id="mobile" placeholder="Enter number" value=""/>
+	<input type="submit"/>
+</form>
+    <h1></h1>
+    <h2></h2>
+    <h3></h3>
+    <h4></h4>
+    <h5></h5>
+	<script>
+		document.querySelector("form").addEventListener("click",myfunction);
+
+        function myfunction(){
+            let name = document.querySelector("#name").value;
+            document.querySelector("h1").innerText= name;
+
+            let age = document.querySelector("#age").value;
+            document.querySelector("h2").innerText= age;
+
+            let gender = document.querySelector("#gender").value;
+            document.querySelector("h3").innerText= gender;
+
+            let email = document.querySelector("#email").value;
+            document.querySelector("h4").innerText= email;
+
+            let mobile = document.querySelector("#mobile").value;
+            document.querySelector("h5").innerText= mobile;
+        }
+	</script>
+</body>
+</html>

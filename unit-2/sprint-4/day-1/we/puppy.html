@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: aqua;
+            border: 0;
+            padding: 5px 5px;
+            margin:20px 30px;
+        }
+        p{
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXnZZNO1LDAhKlec04_pHpiq-SqB3eaZIikGkOx52-lp6Cp_UrDERtooybF5vM02J4GIE&usqp=CAU" alt="">
+<div>
+    <p>Likes:- <span id="likeOut"></span></p>
+    <p>Dislikes:-<span id="dislikeOut"></span></p>
+</div>
+    <div>
+    <button >Like</button>
+    <button >Dislike</button>
+</div>
+</body>
+</html>
+ 
+<script>
+    let likeCount;
+if(localStorage.getItem("puppyLike")==null){
+    likeCount=0;
+} else {
+    likeCount=localStorage.getItem("puppyLike");
+}
+document.getElementById("likeOut").innerText=likeCount;
+
+let dislikeCount;
+if(localStorage.getItem("puppyDislike")==null){
+    dislikeCount=0;
+} else {
+    dislikeCount=localStorage.getItem("puppyDislike");
+}
+document.getElementById("dislikeOut").innerText=dislikeCount;
+
+document.querySelector("div>button").addEventListener("click",likeFunc)
+
+function likeFunc(){
+    likeCount++;
+    document.getElementById("likeOut").innerText=likeCount;
+    localStorage.setItem("puppyLike",likeCount);
+}
+document
+.querySelector("button+button")
+.addEventListener("click",dislikeFunc);
+
+function dislikeFunc(){
+    dislikeCount++;
+    document.getElementById("dislikeOut").innerText=dislikeCount;
+    localStorage.setItem("puppyDislike",dislikeCount);
+}
+</script>

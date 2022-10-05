@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <p>Put your weight in here(KG)</p>
+    <input type="number" name="enter 1st Number" id="weight" >
+    <p>And your height in here (CM)</p>
+	<input type="number" name="enter 2nd Number" id="height">
+    <input type="submit" value="Calculate BMI">
+</form>
+<p id="display"> </p>
+</body>
+</html>
+<script>
+    
+    document.querySelector("form").addEventListener("click",myfunction);
+
+    function myfunction(){
+        event.preventDefault();
+        let weight = document.querySelector("#weight").value;
+        let height = document.querySelector("#height").value;
+
+        
+        let calculate = weight / (height*height);
+        let bmi = calculate * 10000;
+        let bag = "your bmi is " + bmi.toFixed(2) + " which means you are ";
+        
+        if(bmi>=30){
+            bag += "Obese";
+        }else if(bmi>=25 && bmi <= 29.9){
+            bag += "Overweight";
+        }else if(bmi>=18.5 && bmi <= 24.9){
+            bag += "Normal Weight";
+        }else{
+            bag += "Under Weight";
+        }
+        display.innerText = bag;
+    }
+</script>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+   <style>
+    h1{
+        color: aquamarine;
+        text-align: center;
+        font-size: 50px;
+    }
+    .box{
+        border: 1px solid white;
+        width:25%;
+        height: 400px;
+        margin: auto;
+        margin-top: 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .box1{
+        border: 1px solid red;
+        width: 60%;
+        height: 50px;
+        margin: auto;
+        margin-top: 50px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        overflow: auto;
+    }
+    .box2{
+        
+        width: 65%;
+        height:250px;
+        margin: auto;
+        margin-top: 20px;
+        
+    }
+    .cal {
+        
+        height: 50px;
+        width: 100%;
+        border-left:20px;
+        display: flex;
+        margin-top: 10px;
+       
+    }
+
+    .cal1{
+        
+        height: 50px;
+        width: 100%;
+        border-left:20px;
+        display: flex;
+        margin-top: 10px;
+    
+    }
+    .cal2{
+        
+        height: 50px;
+        width: 100%;
+        border-left:20px;
+        display: flex;
+        margin-top: 10px;
+    }
+    .cal3{
+        
+        height: 50px;
+        width: 100%;
+        border-left:20px;
+        display: flex;
+        margin-top: 10px;
+    }
+    .cal>div{
+        
+        width: 12%;
+        height: 70%;
+        font-weight: bold;
+        font-size: 15px;
+        padding-left:20px;
+        padding-top: 15px;
+        margin: auto;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        
+        
+    }
+    .cal1>div{
+        
+        width: 12%;
+        height: 70%;
+        font-size: 15px;
+        font-weight: bold;
+        padding-left:20px;
+        margin: auto;
+        padding-top: 15px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        
+    }
+    .cal2>div{
+       
+        width: 12%;
+        height: 70%;
+        font-size: 15px;
+        font-weight: bold;
+        padding-left:20px;
+        margin: auto;
+        padding-top: 15px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        
+    }
+    .cal3>div{
+        
+        width: 12%;
+        height: 70%;
+        font-size: 15px;
+        font-weight: bold;
+        padding-left:20px;
+        margin: auto;
+        padding-top: 15px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+    .cal>div:nth-child(4),.cal1>div:nth-child(4),.cal2>div:nth-child(4),.cal3>div:nth-child(4),.cal3>div:nth-child(3){
+        background-color: black;
+        color: white;
+        border-radius: 10px;
+    }
+    .cal3>div:nth-child(1){
+        background-color: red;
+        color: aliceblue;
+    }
+    .cal>div:hover{
+        background-color: green;
+        color: white;
+    }
+    .cal1>div:hover{
+        background-color: green;
+        color: white;
+    }
+    .cal2>div:hover{
+        background-color: green;
+        color: white;
+    }
+    .cal3>div:hover{
+        background-color: green;
+        color: white;
+    } 
+   </style>
+
+</head>
+<body>
+    <h1>Masai Calculator</h1>
+    <div class="box">
+        <div class="box1"></div>
+        <div class="box2">
+        <div class="cal">
+            <div class="res">1</div>
+            <div class="res">2</div>
+            <div class="res">3</div>
+            <div class="res">+</div>
+        </div>
+        <div class="cal1">
+            <div class="res">4</div>
+            <div class="res">5</div>
+            <div class="res">6</div>
+            <div class="res">-</div>
+        </div>
+        <div class="cal2">
+            <div class="res">7</div>
+            <div class="res">8</div>
+            <div class="res">9</div>
+            <div class="res">*</div>
+        </div>
+        <div class="cal3">
+            <div class="res">C</div>
+            <div class="res">0</div>
+            <div class="res">=</div>
+            <div class="res">/</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+let x = document.querySelectorAll(".res")
+let bag=""
+for(let i=0;i<x.length;i++){
+ x[i].addEventListener("click" , forClick)
+
+}
+
+function forClick(){
+    let target = event.target.innerText
+    
+if(target=="C"){
+    bag=""
+    document.querySelector(".box1").innerText="0"
+}else if(target=="="){
+    if(bag==""){
+        document.querySelector(".box1").innerText="0"
+    }else {
+        document.querySelector(".box1").innerText=eval(bag)
+    }
+   }else{
+    bag=bag+target
+ document.querySelector(".box1").innerText=bag
+}
+}
+
+
+
+
+
+
+</script>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            font-size: 40px;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system;
+        }
+        #winner{
+            height: 100px;
+            width: 400px;
+            border: 5px solid;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+       #dice{
+        width: 500px;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 50px auto;
+       
+       }
+       #dice>div{
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid;
+       }
+       button{
+        padding: 10px 30px;
+        background: transparent;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 15px;
+       }
+    </style>
+</head>
+<body>
+    <div id="winner"></div>
+   
+    <div id="dice">
+        <div id="member_1"></div>
+        <div id="member_2"></div>
+        <div id="member_3"></div>
+    </div>
+   
+    <button id="roll">Roll the dice</button>
+</body>
+</html>
+<script>
+    document.querySelector("button").addEventListener("click",rolldice)
+    
+    
+
+    function rolldice(){
+        // window.location.reload()
+        let dicearr = []
+        let winner = document.querySelector("#winner")
+        let member_1 = document.querySelector("#dice>#member_1")
+        member_1.innerText =  Math.floor( Math.random()*(6-1+1)+1)
+        dicearr.push({member:member_1.innerText})
+
+        let member_2 = document.querySelector("#dice>#member_2")
+        member_2.innerText =  Math.floor( Math.random()*(6-1+1)+1)
+        dicearr.push({member:member_2.innerText})
+
+        let member_3 = document.querySelector("#dice>#member_3")
+        member_3.innerText =  Math.floor( Math.random()*(6-1+1)+1)
+        dicearr.push({member:member_3.innerText})
+        min = Infinity;
+         max = -Infinity;
+        dicearr.forEach(function(elem){
+            
+            if(min>elem.member){
+                min = elem.member
+            }
+            if(max<elem.member){
+                max = elem.member
+            }
+            elem.backgroundColor = ""
+    })
+    console.log(max,min)
+    if(member_1.innerText==max){
+        member_1.style.backgroundColor = "green"
+        winner.innerText = "Member1"
+
+    }else if(member_2.innerText==max){
+        member_2.style.backgroundColor = "green"
+        winner.innerText = "Member2"
+    }
+    else if(member_3.innerText==max){
+        member_3.style.backgroundColor = "green"
+        winner.innerText = "Member3"
+    }
+
+    if(member_1.innerText<max && member_1.innerText>min){
+        member_1.style.backgroundColor = "yellow"
+    }else if(member_2.innerText<max && member_2.innerText>min){
+        member_2.style.backgroundColor = "yellow"
+    }
+    else if(member_3.innerText<max && member_3.innerText>min){
+        member_3.style.backgroundColor = "yellow"
+    }
+
+    if(member_1.innerText==min){
+        member_1.style.backgroundColor = "red"
+    }else if(member_2.innerText==min){
+        member_2.style.backgroundColor = "red"
+    }
+    else if(member_3.innerText==min){
+        member_3.style.backgroundColor = "red"
+    }
+    
+    if(member_1.innerText==member_2.innerText){
+        member_1.style.backgroundColor = "blue"
+        member_2.style.backgroundColor = "blue"
+        winner.innerText = "Draw"
+
+    }else if(member_1.innerText==member_3.innerText){
+        member_1.style.backgroundColor = "blue"
+        member_3.style.backgroundColor = "blue"
+        winner.innerText = "Draw"
+    }else if(member_2.innerText==member_3.innerText){
+        member_2.style.backgroundColor = "blue"
+        member_3.style.backgroundColor = "blue"
+        winner.innerText = "Draw"
+    }
+
+
+}
+    
+</script>
